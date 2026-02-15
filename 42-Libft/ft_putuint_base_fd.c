@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putuint_base_fd.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlanehar <dlanehar@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 13:26:04 by dlanehar          #+#    #+#             */
-/*   Updated: 2025/12/23 09:22:36 by dlanehar         ###   ########.fr       */
+/*   Created: 2026/02/15 12:32:39 by dlanehar          #+#    #+#             */
+/*   Updated: 2026/02/15 13:43:47 by dlanehar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <unistd.h>
-# include <stdarg.h>
+#include "../headers/libft.h"
 
-int		ft_printf(const char *format, ...)__attribute__((format(printf, 1, 2)));
-ssize_t	ft_usiputnbrcount_base_fd(size_t n, char *base, int fd);
-ssize_t	ft_putstrcount_fd(char *s, int fd);
-ssize_t	ft_putcharcount_fd(char c, int fd);
-ssize_t	ft_putnbrcount_fd(int n, int fd);
-size_t	ft_strlen(const char *s);
+ssize_t	ft_putuint_base_fd(size_t n, char *base, int fd)
+{
+	size_t	len;
+	ssize_t	i;
 
-#endif
+	if (!base)
+		return (-1);
+	i = 0;
+	len = ft_strlen(base);
+	if (n >= len)
+	{
+		i += ft_putuint_base_fd(n / len, base, fd);
+		i += ft_putuint_base_fd(n % len, base, fd);
+	}
+	else
+		i += ft_putchar_fd(base[n], fd);
+	return (i);
+}

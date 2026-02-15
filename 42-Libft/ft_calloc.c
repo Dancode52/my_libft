@@ -6,11 +6,11 @@
 /*   By: dlanehar <dlanehar@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 13:54:24 by dlanehar          #+#    #+#             */
-/*   Updated: 2025/12/23 14:25:18 by dlanehar         ###   ########.fr       */
+/*   Updated: 2026/02/15 13:43:47 by dlanehar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Headers/libft.h"
+#include "../headers/libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

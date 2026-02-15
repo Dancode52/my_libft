@@ -6,11 +6,11 @@
 /*   By: dlanehar <dlanehar@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 14:49:15 by dlanehar          #+#    #+#             */
-/*   Updated: 2025/12/23 14:25:18 by dlanehar         ###   ########.fr       */
+/*   Updated: 2026/02/15 13:43:47 by dlanehar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Headers/libft.h"
+#include "../headers/libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

@@ -6,15 +6,19 @@
 /*   By: dlanehar <dlanehar@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 09:23:19 by dlanehar          #+#    #+#             */
-/*   Updated: 2025/12/23 14:25:18 by dlanehar         ###   ########.fr       */
+/*   Updated: 2026/02/15 13:43:47 by dlanehar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Headers/libft.h"
+#include "../headers/libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+ssize_t	ft_putstr_fd(char *s, int fd)
 {
+	ssize_t	written_chars;
+
+	written_chars = 0;
 	if (!s || fd < 0)
-		return ;
-	write(fd, s, ft_strlen(s));
+		return (-1);
+	written_chars = write(fd, s, ft_strlen(s));
+	return (written_chars);
 }

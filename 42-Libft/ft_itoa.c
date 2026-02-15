@@ -6,11 +6,11 @@
 /*   By: dlanehar <dlanehar@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 14:13:51 by dlanehar          #+#    #+#             */
-/*   Updated: 2025/12/23 14:25:18 by dlanehar         ###   ########.fr       */
+/*   Updated: 2026/02/15 13:43:47 by dlanehar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Headers/libft.h"
+#include "../headers/libft.h"
 
 static int	nbr_len(int n)
 {
@@ -54,11 +54,9 @@ static char	*min_or_zero(int n)
 static char	*print_nbr(int n)
 {
 	int		size;
-	int		i;
 	char	*str;
 
 	size = nbr_len(n) + 1;
-	i = 0;
 	str = ft_calloc(size, sizeof(char));
 	if (!str)
 		return (NULL);

@@ -12,14 +12,26 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+
+# endif
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
+
+ssize_t		ft_printf(const char *format, ...)__attribute__((format(printf, 1, 2)));
+
+char	*get_next_line(int fd);
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -43,10 +55,11 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
+ssize_t	ft_putchar_fd(char c, int fd);
+ssize_t	ft_putstr_fd(char *s, int fd);
+ssize_t	ft_putendl_fd(char *s, int fd);
+ssize_t	ft_putnbr_fd(int n, int fd);
+ssize_t	ft_putuint_base_fd(size_t n, char *base, int fd);
 void	*ft_memset(void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);

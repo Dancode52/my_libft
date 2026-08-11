@@ -6,7 +6,7 @@
 /*   By: dlanehar <dlanehar@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 10:42:48 by dlanehar          #+#    #+#             */
-/*   Updated: 2026/08/11 07:39:17 by dlanehar         ###   ########.fr       */
+/*   Updated: 2026/08/11 09:27:53 by dlanehar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ ssize_t	ft_printf(const char *format, ...)__attribute__((format(printf, 1, 2)));
 
 char	*get_next_line(int fd);
 
+double	ft_atof(char *str);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
